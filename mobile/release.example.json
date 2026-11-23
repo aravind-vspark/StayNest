@@ -1,0 +1,9 @@
+{
+  "apiOrigin": "https://YOUR-STAYNEST-DOMAIN.example",
+  "supportEmail": "support@YOUR-STAYNEST-DOMAIN.example",
+  "appId": "com.staynest.app",
+  "versionName": "1.0.0",
+  "versionCode": 1,
+  "appleTeamId": "YOURTEAMID",
+  "androidSigningSha256": ["YOUR_PLAY_APP_SIGNING_CERTIFICATE_SHA256"]
+}

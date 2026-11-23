@@ -1,0 +1,28 @@
+databases:
+  - name: staynest-db
+    databaseName: staynest
+    user: staynest
+    region: singapore # Closest region to India for fast latency
+
+services:
+  - type: web
+    name: staynest-app
+    runtime: python
+    region: singapore
+    buildCommand: pip install -r backend/requirements.txt && (cd backend && python -m alembic upgrade head)
+    startCommand: cd backend && python -m uvicorn app.main:app --host 0.0.0.0 --port $PORT --proxy-headers --forwarded-allow-ips "*"
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.10
+      - key: APP_ENV
+        value: production
+      - key: APP_ORIGIN
+        value: https://staynest.vsparktechnologies.in
+      - key: DATABASE_URL
+        fromDatabase:
+          name: staynest-db
+          property: connectionString
+      - key: SESSION_SECRET
+        generateValue: true
+      - key: CORS_ORIGINS
+        value: https://staynest.vsparktechnologies.in

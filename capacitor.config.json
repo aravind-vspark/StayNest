@@ -1,0 +1,10 @@
+{
+  "appId": "com.staynest.app",
+  "appName": "StayNest",
+  "webDir": "mobile/dist",
+  "server": {"androidScheme": "https"},
+  "plugins": {
+    "CapacitorHttp": {"enabled": true},
+    "CapacitorCookies": {"enabled": true}
+  }
+}

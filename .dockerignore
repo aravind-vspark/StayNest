@@ -1,0 +1,17 @@
+.env
+.venv/
+venv/
+__pycache__/
+*.pyc
+*.db
+.pytest_cache/
+media/
+*.pem
+*.log
+*.zip
+.openai/
+node_modules/
+.npm-cache/
+mobile/
+android/
+ios/
